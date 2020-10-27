@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 /* Angular Material */
 import { MatInputModule } from '@angular/material/input';
@@ -33,7 +34,8 @@ import { PostsService } from './posts/posts.service';
     MatButtonModule,
     MatCardModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [
     PostsService

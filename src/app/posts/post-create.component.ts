@@ -16,7 +16,11 @@ export class PostCreateComponent {
     if (form.invalid) {
       return;
     }
+
+    const nextId = this.postsService.getNextId();
+
     const post:Post = {
+      id: Number(nextId + 1),
       title: form.value.postTitle,
       body: form.value.postBody
     }
