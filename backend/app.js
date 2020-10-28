@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.json());
-app.use("/", express.static(path.join(__dirname, "angular")));
+//app.use("/", express.static(path.join(__dirname, "angular")));
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -20,11 +20,11 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.sendFile(path.join(__dirname, "angular", "index.html"));
-});
+// app.use((req, res, next) => {
+//   res.sendFile(path.join(__dirname, "angular", "index.html"));
+// });
 
-app.post("/api/posts", (req, res, next) => {
+app.post("/", (req, res, next) => {
   const post = req.body;
   console.dir(post);
   res.status(201).json({
@@ -32,7 +32,7 @@ app.post("/api/posts", (req, res, next) => {
   });
 });
 
-app.get('/api/posts', (req, res, next) => {
+app.get('/', (req, res, next) => {
   // res.send("Hello from Express!");
   const posts = [
     {

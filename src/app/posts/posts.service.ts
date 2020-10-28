@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core'
 export class PostsService {
   private posts: Post[] = [];
   private postsUpdated = new Subject<Post[]>();
-  private url = 'http://localhost:3000/api/posts';
+  private url = 'http://localhost:3000/';
 
   constructor(private http:HttpClient) {}
 
@@ -44,11 +44,11 @@ export class PostsService {
 
   deletePost(post: Post) {
 
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type':  'application/json'
-      })
-    };
+    // const httpOptions = {
+    //   headers: new HttpHeaders({
+    //     'Content-Type':  'application/json'
+    //   })
+    // };
 
     console.log('deleting post. Post contents:');
     console.dir(post);
